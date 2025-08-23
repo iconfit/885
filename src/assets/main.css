@@ -2,3 +2,157 @@
 @tailwind components;
 @tailwind utilities;
 @reference "tailwindcss";
+
+@import './base.css'; /* Optional, if you still use it */
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+/* Add this */
+body {
+  font-family: 'Russo One', sans-serif;
+}
+
+/* Base resets for header/nav controls — removes the faint white border/outline */
+@layer base {
+  header a,
+  header button,
+  nav a,
+  nav button {
+    background-color: transparent;
+    border: 0 !important;
+    outline: 0;
+    box-shadow: none;
+    -webkit-appearance: none;
+    appearance: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  header a:focus,
+  header a:active,
+  header button:focus,
+  header button:active,
+  nav a:focus,
+  nav a:active,
+  nav button:focus,
+  nav button:active {
+    outline: none;
+    box-shadow: none;
+    border: 0 !important;
+  }
+}
+
+.glitch-button {
+  background-color: rgba(255, 255, 255, 0.05); /* transparent glass look */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #0ff;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease-in-out;
+}
+
+.glitch-button:hover {
+  border-color: #0ff;
+  box-shadow:
+    0 0 10px #0ff,
+    0 0 5px red,
+    0 0 5px blue;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+@keyframes glitch-glow {
+  0% {
+    box-shadow: 0 0 5px #0ff;
+  }
+  50% {
+    box-shadow:
+      0 0 15px #0ff,
+      0 0 5px red,
+      0 0 5px blue;
+  }
+  100% {
+    box-shadow: 0 0 5px #0ff;
+  }
+}
+
+/* --- Fixed: avoid sm:/md: inside @apply --- */
+@layer components {
+  .buy-button {
+    /* base (mobile) */
+    @apply inline-flex items-center justify-center gap-x-2 rounded
+           w-full max-w-[240px] mx-auto px-6 py-3 text-base;
+  }
+}
+/* sm ≥ 640px */
+@media (min-width: 640px) {
+  @layer components {
+    .buy-button {
+      @apply max-w-[260px];
+    }
+  }
+}
+/* md ≥ 768px */
+@media (min-width: 768px) {
+  @layer components {
+    .buy-button {
+      @apply w-[200px] mx-0 text-lg px-8;
+    }
+  }
+}
+
+@layer components {
+  .social-button {
+    /* base (mobile) */
+    @apply w-full max-w-[220px] mx-auto;
+  }
+}
+/* md ≥ 768px */
+@media (min-width: 768px) {
+  @layer components {
+    .social-button {
+      @apply w-auto max-w-[260px] mx-0 justify-self-center;
+    }
+  }
+}
+
+/* =============================
+   Backgrounds for section
+   ============================= */
+.bg-moon-stars-edit-img {
+  background-color: #000; /* safe fallback */
+}
+
+/* Desktop & large screens (>= 769px): wide image, fixed */
+@media (min-width: 769px) {
+  .bg-moon-stars-edit-img {
+    background-image: url('@/assets/img/moon-stars-edit-n.png') !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    background-size: cover !important;
+    background-attachment: fixed !important;
+  }
+}
+
+/* Mobile (<= 768px): tall/long image, shifted right a bit */
+@media (max-width: 768px) {
+  .bg-moon-stars-edit-img {
+    background-image: url('@/assets/img/moon-stars-edit-pho.png') !important;
+    background-repeat: no-repeat !important;
+    background-position: 40% top !important; /* tweak 20–50% to taste */
+    background-size: cover !important;
+    background-attachment: scroll !important;
+  }
+}
