@@ -88,6 +88,29 @@ body {
   }
 }
 
+.token-box {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: transform 0.3s ease;
+
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.token-box:hover {
+  transform: scale(1.05);
+  border-color: #0ff;
+}
+.token-value {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 1.5rem;
+  color: #0ff;
+}
+
 /* --- Fixed: avoid sm:/md: inside @apply --- */
 @layer components {
   .buy-button {
