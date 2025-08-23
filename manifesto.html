@@ -2,23 +2,62 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Manifesto</title>
     <link rel="icon" href="/favicon.png" type="image/png" />
     <style>
-      body,
-      html {
+      html,
+      body {
         margin: 0;
         height: 100%;
         width: 100%;
+        background: #000;
       }
       iframe {
-        border: none;
+        border: 0;
         width: 100%;
         height: 100%;
+        display: block;
+      }
+      .fallback {
+        position: fixed;
+        bottom: 0.75rem;
+        left: 0;
+        right: 0;
+        text-align: center;
+        font-family:
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          sans-serif;
+      }
+      .fallback a {
+        color: #0ff;
+        text-decoration: underline;
       }
     </style>
+    <script>
+      // Simple iOS detection (iPhone/iPad/iPod, including iPadOS)
+      ;(function () {
+        var ua = navigator.userAgent || navigator.vendor || window.opera
+        var isIOS =
+          /iPad|iPhone|iPod/.test(ua) ||
+          (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
+        if (isIOS) {
+          // Open the PDF in the native viewer (all pages, smooth scrolling)
+          window.location.replace('/manifesto.pdf')
+        }
+      })()
+    </script>
   </head>
   <body>
-    <iframe src="/manifesto.pdf"></iframe>
+    <!-- Non-iOS: show inline PDF -->
+    <iframe src="/manifesto.pdf#zoom=page-width"></iframe>
+
+    <!-- Fallback link (if iframe blocked) -->
+    <div class="fallback">
+      <a href="/manifesto.pdf" target="_blank" rel="noopener">Open Manifesto PDF directly</a>
+    </div>
   </body>
 </html>
