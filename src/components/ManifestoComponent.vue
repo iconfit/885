@@ -4,8 +4,8 @@
 
     <p class="max-w-2xl mx-auto text-lg md:text-xl leading-relaxed opacity-90 mb-8">
       The <span class="glitch-highlight">$WIREBACK</span> manifesto lays out our stance against
-      robots, mindless automation and AI. If you want to understand what we’re building and why –
-      start here.
+      humanized robots, mindless automation and AI. If you want to understand what we’re building
+      and why – start here.
     </p>
 
     <a
