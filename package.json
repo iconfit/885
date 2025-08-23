@@ -13,10 +13,13 @@
     "build-only": "vite build",
     "type-check": "vue-tsc --build",
     "lint": "eslint . --fix",
-    "format": "prettier --write src/"
+    "format": "prettier --write src/",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist --repo https://iconfit@github.com/iconfit/885.git --cname wireback.xyz"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.12",
+    "gh-pages": "^6.3.0",
     "tailwindcss": "^4.1.12",
     "vue": "^3.5.18"
   },
