@@ -10,7 +10,7 @@
         href="https://x.com/wirebackwojak"
         target="_blank"
         rel="noopener noreferrer"
-        class="glitch-button flex items-center justify-center gap-3 px-6 py-3 text-lg rounded w-56"
+        class="manifesto-box glitch-button flex items-center justify-center gap-3 px-6 py-3 text-lg rounded w-56"
       >
         <img src="/icons/x.svg" alt="X" class="w-5 h-5" />
         Follow on X
@@ -28,7 +28,7 @@
       </a> -->
     </div>
 
-    <h2 class="text-4xl md:text-5xl font-bold mb-20 py-16">Be part of the robotic meta.....</h2>
+    <h2 class="text-4xl md:text-5xl font-bold mb-20 py-16">Be part of the robotic meta...</h2>
   </section>
 </template>
 
@@ -37,6 +37,12 @@
 <style scoped>
 .bg-socials {
   background: radial-gradient(ellipse at center, #3a003f 10%, #000000 90%);
+}
+
+.glitch-button:hover {
+  background: black;
+  color: #0ff;
+  animation: glitch-glow 0.3s infinite;
 }
 
 .glitch-text {
@@ -64,5 +70,25 @@
       2px 0 red,
       -2px 0 blue;
   }
+}
+
+.manifesto-box {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 0.375rem; /* ~6px, like Tailwind's `rounded` */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-weight: 600;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: #fff;
+  text-align: center;
+}
+
+.manifesto-box:hover {
+  transform: scale(1.05);
+  border-color: #0ff;
+  color: #0ff;
 }
 </style>

@@ -23,6 +23,12 @@
 <script setup lang="ts"></script>
 
 <style scoped>
+.glitch-button:hover {
+  background: black;
+  color: #0ff;
+  animation: glitch-glow 0.3s infinite;
+}
+
 .glitch-text {
   position: relative;
   color: #0ff;
