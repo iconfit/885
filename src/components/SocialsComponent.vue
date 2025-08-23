@@ -2,8 +2,9 @@
   <section id="SocialsComponent" class="py-24 px-4 text-white text-center">
     <h2 class="text-4xl md:text-6xl font-bold glitch-text mb-16">Join the Community</h2>
 
-    <div class="flex flex-col md:flex-row justify-center items-center gap-6 max-w-2xl mx-auto mb-10 whitespace-nowrap">
-
+    <div
+      class="flex flex-col md:flex-row justify-center items-center gap-6 max-w-2xl mx-auto mb-10 whitespace-nowrap"
+    >
       <!-- X -->
       <a
         href="https://x.com/wirebackwojak"
@@ -27,32 +28,41 @@
       </a> -->
     </div>
 
-    <h2 class="text-4xl md:text-5xl font-bold mb-20 py-16">Be part of the robotic meta...</h2>
-
+    <h2 class="text-4xl md:text-5xl font-bold mb-20 py-16">Be part of the robotic meta.....</h2>
   </section>
 </template>
 
-
-
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
 <style scoped>
 .bg-socials {
   background: radial-gradient(ellipse at center, #3a003f 10%, #000000 90%);
 }
 
-
 .glitch-text {
   position: relative;
   color: #0ff;
-  text-shadow: 2px 0 red, -2px 0 blue;
+  text-shadow:
+    2px 0 red,
+    -2px 0 blue;
   animation: glitch-flicker 2s infinite linear;
 }
 
 @keyframes glitch-flicker {
-  0% { text-shadow: 2px 0 red, -2px 0 blue; }
-  50% { text-shadow: -2px 0 red, 2px 0 blue; }
-  100% { text-shadow: 2px 0 red, -2px 0 blue; }
+  0% {
+    text-shadow:
+      2px 0 red,
+      -2px 0 blue;
+  }
+  50% {
+    text-shadow:
+      -2px 0 red,
+      2px 0 blue;
+  }
+  100% {
+    text-shadow:
+      2px 0 red,
+      -2px 0 blue;
+  }
 }
 </style>
