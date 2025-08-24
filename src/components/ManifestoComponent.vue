@@ -9,7 +9,7 @@
     </p>
 
     <a
-      href="https://wireback.xyz/manifesto.html"
+      href="https://wireback.xyz/manifesto"
       target="_blank"
       rel="noopener noreferrer"
       class="manifesto-box glitch-button inline-flex items-center justify-center gap-3 w-full max-w-[260px] mx-auto px-6 py-3 text-base sm:max-w-[280px] md:w-[260px] md:text-lg"
